@@ -1,7 +1,7 @@
-plotly
-gTTS
-numpy
-matplotlib
-openai
 streamlit
 streamlit-audiorecorder
+plotly
+matplotlib
+gTTS
+numpy
+openai
