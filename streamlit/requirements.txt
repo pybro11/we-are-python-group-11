@@ -62,3 +62,5 @@ zipp
 
 # 추가
 google-cloud-speech
+streamlit_TTS
+gtts.lang
