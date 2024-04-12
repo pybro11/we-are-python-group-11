@@ -77,6 +77,7 @@ def main():
             
             # gTTS 를 활용하여 음성 파일 생성 및 재생
             TTS(response)
+    st.markdown("---")
 
     ### 사이드바
     import plotly.graph_objects as go
