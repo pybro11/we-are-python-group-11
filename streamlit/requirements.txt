@@ -1,0 +1,8 @@
+streamlit
+pandas
+numpy
+matplotlib
+streamlit-audiorec
+scikit-learn
+Pillow
+plotly
