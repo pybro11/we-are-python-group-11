@@ -6,6 +6,17 @@ import io
 from openai import OpenAI
 import os
 
+audio = mic_recorder(
+    start_prompt="Start recording",
+    stop_prompt="Stop recording",
+    just_once=False,
+    use_container_width=False,
+    format="webm",
+    callback=None,
+    args=(),
+    kwargs={},
+    key=None
+)
 
 def whisper_stt(openai_api_key=None, start_prompt="Start recording", stop_prompt="Stop recording", just_once=False,
                use_container_width=False, language=None, callback=None, args=(), kwargs=None, key=None):
