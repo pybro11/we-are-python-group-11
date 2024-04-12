@@ -3,6 +3,7 @@ import streamlit as st
 import json
 from google.cloud import speech
 from google.oauth2 import service_account
+import openai
 
 # Load the JSON secret
 service_account_info = {
@@ -37,6 +38,16 @@ st.markdown('''<style>.css-v37k9u a {color: #ff4c4b;}</style>''',
             unsafe_allow_html=True)  # darkmode
 st.markdown('''<style>.css-nlntq9 a {color: #ff4c4b;}</style>''',
             unsafe_allow_html=True)  # lightmode
+
+def query_gpt(text, model="text-davinci-002"):
+    """Query OpenAI GPT using the provided text and return the response."""
+    openai.api_key = st.secrets["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"]
+    response = openai.Completion.create(
+        model=model,
+        prompt=text,
+        max_tokens=150
+    )
+    return response.choices[0].text.strip()
 
 
 def transcribe_google(audio_bytes):
