@@ -48,22 +48,22 @@ def transcribe_google(audio_bytes):
         audio_channel_count=2,
         language_code="ko-KR"  # 여기서 언어 설정을 조정할 수 있습니다.
     )
-
     # API 요청 및 응답
     response = client.recognize(config=config, audio=audio)
     transcription = ""
     for result in response.results:
         transcription += result.alternatives[0].transcript
-
     return transcription
 
-
+def audiorec_demo_app():
     """오디오 녹음하고 텍스트로 변환합니다."""
-wav_audio_data = st_audiorec()
-if wav_audio_data is not None:
-    col_playback, col_space = st.columns([0.58,0.42])
-    with col_playback:
-        st.audio(wav_audio_data, format='audio/wav')
+    wav_audio_data = st_audiorec()
+    if wav_audio_data is not None:
+        col_playback, col_space = st.columns([0.58,0.42])
+        with col_playback:
+            st.audio(wav_audio_data, format='audio/wav')
 
-    transcription = transcribe_google(wav_audio_data)
-    st.text_area("Transcription", transcription, height=100)
+        transcription = transcribe_google(wav_audio_data)
+        st.text_area("Transcription", transcription, height=100)
+        response_text = query_gpt(transcription)
+        st.text_area("GPT Response", response_text, height=150)
