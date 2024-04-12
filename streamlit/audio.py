@@ -4,6 +4,7 @@ import streamlit as st
 from google.cloud import speech
 
 
+
 # DESIGN implement changes to the standard streamlit UI/UX
 # --> optional, not relevant for the functionality of the component!
 
@@ -27,7 +28,8 @@ def transcribe_google(audio_bytes):
     audio = speech.RecognitionAudio(content=audio_bytes)
     config = speech.RecognitionConfig(
         encoding=speech.RecognitionConfig.AudioEncoding.LINEAR16,
-        sample_rate_hertz=44100,
+        sample_rate_hertz=48000,
+        audio_channel_count=2,
         language_code="ko-KR"  # 여기서 언어 설정을 조정할 수 있습니다.
     )
 
