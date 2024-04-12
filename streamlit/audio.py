@@ -2,7 +2,6 @@ from st_audiorec import st_audiorec
 import streamlit as st 
 import json
 from google.cloud import speech
-
 from google.oauth2 import service_account
 
 # Load the JSON secret
@@ -40,7 +39,6 @@ st.markdown('''<style>.css-nlntq9 a {color: #ff4c4b;}</style>''',
             unsafe_allow_html=True)  # lightmode
 
 
-
 def transcribe_google(audio_bytes):
     """Google Cloud Speech-to-Text를 사용하여 오디오 바이트를 텍스트로 변환합니다."""
     audio = speech.RecognitionAudio(content=audio_bytes)
@@ -59,16 +57,13 @@ def transcribe_google(audio_bytes):
 
     return transcription
 
-def audiorec_demo_app():
+
     """오디오 녹음하고 텍스트로 변환합니다."""
-    wav_audio_data = st_audiorec()
-    if wav_audio_data is not None:
-        col_playback, col_space = st.columns([0.58,0.42])
-        with col_playback:
-            st.audio(wav_audio_data, format='audio/wav')
+wav_audio_data = st_audiorec()
+if wav_audio_data is not None:
+    col_playback, col_space = st.columns([0.58,0.42])
+    with col_playback:
+        st.audio(wav_audio_data, format='audio/wav')
 
-        transcription = transcribe_google(wav_audio_data)
-        st.text_area("Transcription", transcription, height=100)
-
-if __name__ == "__main__":
-    audiorec_demo_app()
+    transcription = transcribe_google(wav_audio_data)
+    st.text_area("Transcription", transcription, height=100)
