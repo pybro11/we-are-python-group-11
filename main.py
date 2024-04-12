@@ -28,7 +28,7 @@ def main():
     st.header("트렌드를 분석하는 <11조>입니다.💫")
     st.markdown("---")
 
-    # 칼럼
+    ### 칼럼
     flag_start = False
 
     col1, col2 =  st.columns([3,5])
@@ -78,7 +78,7 @@ def main():
             # gTTS 를 활용하여 음성 파일 생성 및 재생
             TTS(response)
 
-    # 사이드바
+    ### 사이드바
     import plotly.graph_objects as go
     import pandas as pd
     import yfinance as yf
