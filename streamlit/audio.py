@@ -23,9 +23,6 @@ service_account_info = {
 credentials = service_account.Credentials.from_service_account_info(service_account_info)
 client = speech.SpeechClient(credentials=credentials)
 
-# DESIGN implement changes to the standard streamlit UI/UX
-# --> optional, not relevant for the functionality of the component!
-
 # Design move app further up and remove top padding
 st.markdown('''<style>.css-1egvi7u {margin-top: -3rem;}</style>''',
             unsafe_allow_html=True)
