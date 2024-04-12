@@ -12,3 +12,4 @@ whisper
 openai-whisper
 soundfile
 google-cloud-speech
+streamlit_mic_recorder
