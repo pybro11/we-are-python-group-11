@@ -6,19 +6,6 @@ import io
 from openai import OpenAI
 import os
 
-from streamlit_mic_recorder import speech_to_text
-text = speech_to_text(
-    language='en',
-    start_prompt="Start recording",
-    stop_prompt="Stop recording",
-    just_once=False,
-    use_container_width=False,
-    callback=None,
-    args=(),
-    kwargs={},
-    key=None
-)
-
 def whisper_stt(openai_api_key=None, start_prompt="Start recording", stop_prompt="Stop recording", just_once=False,
                use_container_width=False, language=None, callback=None, args=(), kwargs=None, key=None):
     if not 'openai_client' in st.session_state:
