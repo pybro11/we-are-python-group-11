@@ -7,16 +7,17 @@ from google.oauth2 import service_account
 
 # Load the JSON secret
 service_account_info = {
-    "type": st.secrets["type"],
-    "project_id": st.secrets["project_id"],
-    "private_key_id": st.secrets["private_key_id"],
-    "private_key": st.secrets["private_key"],
-    "client_email": st.secrets["client_email"],
-    "client_id": st.secrets["client_id"],
-    "auth_uri": st.secrets["auth_uri"],
-    "token_uri": st.secrets["token_uri"],
-    "auth_provider_x509_cert_url": st.secrets["auth_provider_x509_cert_url"],
-    "client_x509_cert_url": st.secrets["client_x509_cert_url"]
+  "type": "service_account",
+  "project_id": "steam-cache-420106",
+  "private_key_id": "90ec9d24e7ecb765b189e9eb6cde776ef2e95ed4",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQCaoKLqjAsyovAB\n5t7/D8lR9a9zL9qDj068xJwFejFroFUM2sDBNObsFhfOSBEkeaaX2x4FcDzPge8B\ngAIAzoGdmjEksFSI716vbrAN0Bphp2QvKKCMiG/HXEelKMGZ5Z8VSIeVqorKKlzq\n9fIP1rL6PBpsZlhRdqQhHPNE7HY7nfuRL8re2s3tlYmRm7KG44GAXc3MsBRJMQT1\nZbj3TNYoYjVij94GS07ZFHorI3lxnA2z+nHlIZ53Yg4rvHaI0NjUgnxfTEpLwu9w\nQqxdcJOggxC5H1KDMJ1qYUw8qtFuPSQxJQJhQXw8R98xRhkJZnwieyzHrBvz0UI+\nkJ6ozd4bAgMBAAECggEAQrupFAi0nHntkySMgQ/TFugtfEzexYCHvrgrjcGaqpRb\noFyYa8nlD2bJh2Fa5J8L4uXSIw65b+TnvYH9W1PEZLwzEV54XVDRUG041f1GJXcU\nqbWi9IO9mhCdaw4X389VxN20hkc/9tgpmc3jViqWu6BM1xOkciP92byg0NIshLWS\nG4USXKbcwel5ENkpmA17qwihLl6iQs4vEPwBaKOceZWlgo99V9D4H3UVkjniRZCg\nraRDNGVIhmH65o8ctzW+f1NWFER8EsXJoEH96AMcPgyWuTy4n5tYeJcNOwbAN2qV\nOUBVbSeZNvqiFJuVWFtRiV93T7BFiP/EmTeZSZbDwQKBgQDMpPhL3BiA78eHehlD\nuOl/MqjM+G25yjJP4sVayoX9ro7AT5hRKdo1mhtuzmqsrbD7CeROoR29ziS5EAYR\nyNzNFYHnoyEP2TbPbGwrr7lBIWKh16RyYjGlCRtFJTXr9ClUlECDCLaHnggVRsZM\nhqqgv2g9nnkhnzETrttEcZaKgwKBgQDBbmog+QuQuPXXkSv0fuo5+x9eiOI5wSLS\nemVn3y6Pg3ksFaMWMKHB9Cn7sSewWZiwIddspUqcvrjixT0UbYe+XjY5Ec4JG5qs\n8IIgkw+DbycyQiZ3daRHKTKRzq+y6ond/MiPTGe1F7c3g1ad892w1z6ElVhLFzYp\nVsspLzbqiQKBgQDEcDL7tqk603AnhrfLvys78yf/oRTKu+Gxt0+USEV4buAOkBj5\nCACzZVuh8LiLSytQvn0OUTAYa1Hq5wu8dKAmqNeKv5dT/EDVuRDYmpRshZyFGFd9\niO54qhYoOIDbHwOxcaG/ZlS4N6Uwr0BYYwhUx4dLZtyFvqbAax+FQrer+wKBgQCY\n1WsZnm2a7emhZ9z5FAZxxY+lnDZTN90RvQ++oMMjNdhaEsaHU+mbXBaH/hPD7ScN\nk8+o0nk/nBptYza9m0V0DvB86yqGW789AdNvdYL+cKbhuQ63uMYSS+Te/BYrIdHJ\nCmBViSMwHQrw299mcjcp8Qg+rdnTiwWKaD+hzOJxMQKBgQC97etgD5Hr9HsuvMNb\nw40c9KZ63GvEN1IFtDBGEjeLlMiItdoXUDw9JvDeDDRet7gauqJ++rCahbtDmQ29\nxvQ416HqQ1z+SAo7+GkbDQIQcYjt+ao3z07vxqAclR6kgLWjyzVeUAQ9N2eIubQ/\nRqYdhv2AtdMTWjRkv16TvBvf4A==\n-----END PRIVATE KEY-----\n",
+  "client_email": "lucypothesis@steam-cache-420106.iam.gserviceaccount.com",
+  "client_id": "110045906642819557227",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/lucypothesis%40steam-cache-420106.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
 }
 
 # Create the SpeechClient with the loaded credentials
