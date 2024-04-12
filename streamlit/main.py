@@ -13,7 +13,6 @@ import webinput
 from whisper_stt import whisper_stt
 
 text = whisper_stt(openai_api_key="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", language = 'en')  
-# If you don't pass an API key, the function will attempt to retrieve it as an environment variable : 'OPENAI_API_KEY'.
 if text:
     st.write(text)
 
