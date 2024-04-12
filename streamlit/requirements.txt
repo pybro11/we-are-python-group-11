@@ -1,8 +1,9 @@
 streamlit
+streamlit_mic_recorder
+streamlit-audiorec
 pandas
 numpy
 matplotlib
-streamlit-audiorec
 scikit-learn
 Pillow
 plotly
@@ -12,4 +13,3 @@ whisper
 openai-whisper
 soundfile
 google-cloud-speech
-streamlit_mic_recorder
