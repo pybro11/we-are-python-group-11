@@ -23,6 +23,7 @@ service_account_info = {
 credentials = service_account.Credentials.from_service_account_info(service_account_info)
 client = speech.SpeechClient(credentials=credentials)
 
+
 # DESIGN implement changes to the standard streamlit UI/UX
 # --> optional, not relevant for the functionality of the component!
 
