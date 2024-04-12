@@ -41,7 +41,7 @@ st.markdown('''<style>.css-nlntq9 a {color: #ff4c4b;}</style>''',
 def query_gpt(text, model="text-davinci-002"):
     """Query OpenAI GPT using the provided text and return the response."""
     openai.api_key = "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"
-    response = openai.Completion.create(
+    response = openai.ChatCompletion.create(
         model=model,
         prompt=text,
         max_tokens=150
