@@ -2,15 +2,6 @@ import streamlit as st
 
 st.title('트렌드를 분석하는 11조입니다.💫')
 
-import audio
-if 'recording_started' not in st.session_state:
-    st.session_state.recording_started = False
-
-if st.button("음성 녹음 시작", key='start_rec'):
-    st.session_state.recording_started = True
-
-if st.session_state.recording_started:
-    audio.audiorec_demo_app()
 
 import column12
 
@@ -20,3 +11,13 @@ import ploty
 
 import webinput
 
+import audio
+
+if 'recording_started' not in st.session_state:
+    st.session_state.recording_started = False
+
+if st.button("음성 녹음 시작", key='start_rec'):
+    st.session_state.recording_started = True
+
+if st.session_state.recording_started:
+    audio.audiorec_demo_app()
