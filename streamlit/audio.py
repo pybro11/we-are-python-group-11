@@ -41,7 +41,7 @@ st.markdown('''<style>.css-nlntq9 a {color: #ff4c4b;}</style>''',
 
 def query_gpt(text, model="text-davinci-002"):
     """Query OpenAI GPT using the provided text and return the response."""
-    openai.api_key = st.secrets["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"]
+    openai.api_key = st.secrets["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"]
     response = openai.Completion.create(
         model=model,
         prompt=text,
