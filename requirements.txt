@@ -2,6 +2,7 @@ streamlit
 streamlit-audiorecorder
 plotly
 matplotlib
+yfinance
 gTTS
 numpy
 openai
