@@ -4,7 +4,7 @@ plotly
 matplotlib
 yfinance
 gTTS
-ffmpeg
+pydub
 numpy
 openai
 scikit-learn
