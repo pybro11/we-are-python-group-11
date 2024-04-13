@@ -43,7 +43,7 @@ def main():
         filename='input.mp3'
         audio.export(filename, format='mp3')  # AudioSegment를 mp3 파일로 저장
         audio_file = AudioSegment.from_file(filename)
-        wav_file.close()
+        # wav_file.close()
     
         # 음원 파일 열기
         audio_file = open(filename, "rb")
@@ -66,15 +66,8 @@ def main():
         tts.save(filename, format='mp3')
     
         # 음원 파일 자동 재생
-        with open(filename, "rb") as f:
-            data = f.read()
-            b64 = base64.b64encode(data).decode()
-            md = f"""
-                <audio autoplay="True">
-                <source src="data:audio/mp3;base64,{b64}" type="audio/mp3">
-                </audio>
-                """
-            st.markdown(md,unsafe_allow_html=True,)
+        audio = AudioSegment.from_file(filename)
+        play(audio)  # 재생
         # 파일 삭제
         os.remove(filename)
 
