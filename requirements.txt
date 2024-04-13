@@ -51,6 +51,7 @@ pkgutil-resolve-name
 plotly
 protobuf
 pyarrow
+pyaudio
 pydantic
 pydantic-core
 pydeck
