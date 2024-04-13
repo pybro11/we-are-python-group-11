@@ -84,7 +84,7 @@ def main():
     import pandas as pd
     import yfinance as yf
 
-    st.sidebar.title("Stock Chart")
+    st.sidebar.title("주식 차")
     ticker = st.sidebar.text_input("Enter a ticker (e. g. AAPL)", value = "AAPL")
     st.sidebar.markdown('Tickers Link : [All Stock Symbols](https://stockanalysis.com/stocks/)')
     start_date = st.sidebar.date_input("시작 날짜: ", value = pd.to_datetime("2023-01-01"))
