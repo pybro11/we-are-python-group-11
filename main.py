@@ -35,7 +35,7 @@ def main():
     with col1:
         st.subheader("어떤 것이 궁금한가요?")
         # 음성 녹음 아이콘
-        audio = audiorecorder("🐣여기를 클릭하여 말하십쇼~🐣", "🐣여기를 클릭하여 끝내십쇼~🐣")
+        audio = audiorecorder("🐣여기를 클릭하여 말하십쇼~🐣", "👾말하기가 끝나면 누르십쇼~👾")
         if len(audio) > 0 and not np.array_equal(audio,st.session_state["check_audio"]):
             # 음성 재생 
             st.audio(audio.tobytes())
