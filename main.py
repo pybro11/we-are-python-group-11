@@ -2,14 +2,18 @@ import streamlit as st
 from audiorecorder import audiorecorder
 import plotly.graph_objects as go
 import matplotlib.pyplot as plt
-from whisper_stt import STT
-from whisper_stt import ask_gpt
-from whisper_stt import TTS
-import streamlit as st
 import numpy as np
 from datetime import datetime
 from PIL import Image
 import pydub
+import openai
+import base64
+import os
+from gtts import gTTS
+import plotly.graph_objects as go
+import pandas as pd
+import yfinance as yf
+from sklearn.datasets import load_iris 
 
 def main():
     st.set_page_config(
@@ -31,6 +35,47 @@ def main():
 
     ### 칼럼
     flag_start = False
+    
+    openai.api_key = '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'
+    
+    def STT(audio):
+        filename='input.mp3'
+        wav_file = open(filename, "wb")
+        wav_file.write(audio.tobytes())
+        wav_file.close()
+    
+        # 음원 파일 열기
+        audio_file = open(filename, "rb")
+        # Whisper 적용!!!
+        transcript = openai.Audio.transcribe("whisper-1", audio_file)
+        audio_file.close()
+        # 파일 삭제
+        os.remove(filename)
+        return transcript["text"]
+    
+    def ask_gpt(prompt, model):
+        response = openai.ChatCompletion.create(model=model, messages=prompt)
+        system_message = response["choices"][0]["message"]
+        return system_message["content"]
+    
+    def TTS(response):
+        # gTTS 를 활용하여 음성 파일 생성
+        filename = "output.mp3"
+        tts = gTTS(text=response,lang="ko")
+        tts.save(filename)
+    
+        # 음원 파일 자동 재생
+        with open(filename, "rb") as f:
+            data = f.read()
+            b64 = base64.b64encode(data).decode()
+            md = f"""
+                <audio autoplay="True">
+                <source src="data:audio/mp3;base64,{b64}" type="audio/mp3">
+                </audio>
+                """
+            st.markdown(md,unsafe_allow_html=True,)
+        # 파일 삭제
+        os.remove(filename)
 
     col1, col2 =  st.columns([3,5])
     with col1:
@@ -81,9 +126,6 @@ def main():
     st.markdown("---")
 
     ### 사이드바
-    import plotly.graph_objects as go
-    import pandas as pd
-    import yfinance as yf
 
     st.sidebar.title("주식 데이터 시각화")
     ticker = st.sidebar.text_input("ticker를 입력하세요 (e. g. AAPL)", value = "AAPL")
@@ -111,8 +153,6 @@ def main():
     st.plotly_chart(fig)
 
     ### 데이터셋
-    from sklearn.datasets import load_iris 
-    
     iris_dataset = load_iris()
 
     df= pd.DataFrame(data=iris_dataset.data,columns= iris_dataset.feature_names)
