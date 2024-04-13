@@ -136,6 +136,7 @@ def main():
     )
     tmp_df = df[df['species']== select_species]
     st.table(tmp_df.head())
+    st.sidebar.markdown("---")
 
     with st.sidebar:
         st.subheader("체크박스들")
