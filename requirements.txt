@@ -4,6 +4,8 @@ plotly
 matplotlib
 yfinance
 gTTS
+ffmpeg
+libav
 pydub
 numpy
 openai
