@@ -36,7 +36,7 @@ def main():
     ### 칼럼
     flag_start = False
     
-    openai.api_key = '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'
+    openai.api_key = OPENAI_KEY
     
     def STT(audio):
         filename='input.mp3'
