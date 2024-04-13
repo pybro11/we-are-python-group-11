@@ -5,6 +5,7 @@ matplotlib
 yfinance
 gTTS
 pydub
+ffprobe
 numpy
 openai
 scikit-learn
