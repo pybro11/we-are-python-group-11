@@ -1,10 +1,22 @@
-streamlit
-streamlit-audiorecorder
+gTTS==2.3.1
+numpy==1.24.2
+openai==0.27.4
+streamlit==1.20.0
+streamlit-audiorecorder==0.0.2
 plotly
 matplotlib
 yfinance
-gTTS
 pydub
-numpy
-openai
 scikit-learn
+
+# gTTS
+# numpy
+# openai
+# streamlit
+# streamlit-audiorecorder
+
+# plotly
+# matplotlib
+# yfinance
+# pydub
+# scikit-learn
