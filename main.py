@@ -1,11 +1,9 @@
 import streamlit as st
 from audiorecorder import audiorecorder
 import plotly.graph_objects as go
-import matplotlib.pyplot as plt
 import numpy as np
 from datetime import datetime
 from PIL import Image
-import pydub
 import openai
 import base64
 import os
@@ -14,7 +12,6 @@ import plotly.graph_objects as go
 import pandas as pd
 import yfinance as yf
 from sklearn.datasets import load_iris 
-from pydub import AudioSegment
 
 def main():
     st.set_page_config(
@@ -37,7 +34,7 @@ def main():
     ### 칼럼
     flag_start = False
     
-    openai.api_key = os.environ['OPENAI_KEY']
+    openai.api_key = ['OPENAPI_KEY']
     
     def STT(audio):
         filename='input.mp3'
@@ -77,7 +74,7 @@ def main():
             st.markdown(md,unsafe_allow_html=True,)
         # 파일 삭제
         os.remove(filename)
-    
+
     col1, col2 =  st.columns([3,5])
     with col1:
         st.subheader("어떤 것이 궁금한가요?")
