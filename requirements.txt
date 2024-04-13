@@ -9,4 +9,3 @@ numpy
 openai
 scikit-learn
 ffprobe
-avprobe
