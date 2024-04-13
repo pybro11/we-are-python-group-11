@@ -182,6 +182,11 @@ def main():
         st.checkbox("checkbox1")
         st.checkbox("checkbox2")
         st.markdown("---")
+        
+    # 슬라이더 추가
+    with st.sidebar:
+        value2 = st.slider("숫자 선택(2)",0, 100)
+        st.write(value2)
 
 if __name__=="__main__":
     main()
