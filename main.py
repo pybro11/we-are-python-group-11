@@ -110,6 +110,8 @@ def main():
     st.plotly_chart(fig)
 
     ### 데이터셋
+    from sklearn.datasets import load_iris 
+    
     iris_dataset = load_iris()
 
     df= pd.DataFrame(data=iris_dataset.data,columns= iris_dataset.feature_names)
