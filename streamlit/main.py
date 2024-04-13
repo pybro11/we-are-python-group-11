@@ -12,7 +12,7 @@ import webinput
 
 from whisper_stt import whisper_stt
 
-text = whisper_stt(openai_api_key="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", language = 'en')  
+text = whisper_stt(openai_api_key="API_KEY", language = 'en')  
 if text:
     st.write(text)
 
