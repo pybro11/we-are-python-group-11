@@ -89,6 +89,7 @@ def main():
     st.sidebar.markdown('ticker 출처 : [All Stock Symbols](https://stockanalysis.com/stocks/)')
     start_date = st.sidebar.date_input("시작 날짜: ", value = pd.to_datetime("2023-01-01"))
     end_date = st.sidebar.date_input("종료 날짜: ", value = pd.to_datetime("2023-07-28"))
+    st.markdown("---")
 
     # ticker 종목의 시작~종료 날짜 사이의 가격변화를 데이터로 보여줌
     data = yf.download(ticker, start= start_date, end= end_date)
