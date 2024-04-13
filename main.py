@@ -14,6 +14,7 @@ import plotly.graph_objects as go
 import pandas as pd
 import yfinance as yf
 from sklearn.datasets import load_iris 
+from pydub import AudioSegment
 
 def main():
     st.set_page_config(
@@ -40,8 +41,8 @@ def main():
     
     def STT(audio):
         filename='input.mp3'
-        wav_file = open(filename, "wb")
-        wav_file.write(audio.tobytes())
+        audio.export(filename, format='mp3')  # AudioSegment를 mp3 파일로 저장
+        audio_file = AudioSegment.from_file(filename)
         wav_file.close()
     
         # 음원 파일 열기
@@ -62,7 +63,7 @@ def main():
         # gTTS 를 활용하여 음성 파일 생성
         filename = "output.mp3"
         tts = gTTS(text=response,lang="ko")
-        tts.save(filename)
+        tts.save(filename, format='mp3')
     
         # 음원 파일 자동 재생
         with open(filename, "rb") as f:
