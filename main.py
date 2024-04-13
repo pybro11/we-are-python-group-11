@@ -84,9 +84,9 @@ def main():
     import pandas as pd
     import yfinance as yf
 
-    st.sidebar.title("주식 차")
-    ticker = st.sidebar.text_input("Enter a ticker (e. g. AAPL)", value = "AAPL")
-    st.sidebar.markdown('Tickers Link : [All Stock Symbols](https://stockanalysis.com/stocks/)')
+    st.sidebar.title("주식 데이터 시각화")
+    ticker = st.sidebar.text_input("ticker를 입력하세요 (e. g. AAPL)", value = "AAPL")
+    st.sidebar.markdown('ticker 출처 : [All Stock Symbols](https://stockanalysis.com/stocks/)')
     start_date = st.sidebar.date_input("시작 날짜: ", value = pd.to_datetime("2023-01-01"))
     end_date = st.sidebar.date_input("종료 날짜: ", value = pd.to_datetime("2023-07-28"))
 
@@ -106,7 +106,7 @@ def main():
     else:
         st.error("error")
 
-    fig.update_layout(title=f"{ticker} Stock {chart_type} Chart", xaxis_title="Date", yaxis_title="Price")
+    fig.update_layout(title=f"{ticker} 주식 {chart_type} 차트", xaxis_title="Date", yaxis_title="Price")
     st.plotly_chart(fig)
 
     ### 데이터셋
