@@ -185,7 +185,7 @@ def main():
         
     # 슬라이더 추가
     with st.sidebar:
-        value2 = st.slider("숫자 선택(2)",0, 100)
+        value2 = st.slider("숫자를 선택하세요",0, 100)
         st.write(value2)
 
 if __name__=="__main__":
