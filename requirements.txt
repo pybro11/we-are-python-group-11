@@ -6,3 +6,4 @@ yfinance
 gTTS
 numpy
 openai
+scikit-learn
